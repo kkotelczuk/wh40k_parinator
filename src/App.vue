@@ -1,12 +1,10 @@
 <script setup lang="ts">
-import { Button } from '@/components/ui/button'
+import { useSession } from '@/lib/use-session'
 import './assets/index.css'
+
+useSession()
 </script>
 
 <template>
-  <div>
-    <Button>
-      Click me
-    </Button>
-  </div>
+  <RouterView />
 </template>
