@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { supabase } from './lib/supabase'
 import Dashboard from './pages/Dashboard.vue'
 import Login from './pages/Login.vue'
+import NewTeam from './pages/NewTeam.vue'
 import Signup from './pages/Signup.vue'
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
     path: '/signup',
     name: 'Signup',
     component: Signup,
+  },
+  {
+    path: '/new_team',
+    name: 'NewTeam',
+    component: NewTeam,
   },
 ]
 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Button from '@/components/ui/button/Button.vue'
 import { supabase } from '@/lib/supabase'
 import { useQuery } from '@tanstack/vue-query'
 
@@ -24,5 +25,8 @@ const { data: tournaments, isLoading } = useQuery({
         </RouterLink>
       </li>
     </ul>
+    <Button @click="$router.push('/new_team')">
+      New Team
+    </Button>
   </div>
 </template>

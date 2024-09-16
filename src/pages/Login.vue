@@ -2,18 +2,23 @@
 import { Button } from '@/components/ui/button'
 import { useSession } from '@/lib/use-session'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { supabase } from '../lib/supabase'
 
 const email = ref('')
 const password = ref('')
 
 const { session } = useSession()
+const router = useRouter()
 
-function onSignIn() {
-  supabase.auth.signInWithPassword({
+async function onSignIn() {
+  const { error } = await supabase.auth.signInWithPassword({
     email: email.value,
     password: password.value,
   })
+  if (!error) {
+    router.push('/')
+  }
 }
 </script>
 
